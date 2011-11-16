@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Section9</title>
+<link href="http://code.google.com/apis/maps/documentation/javascript/examples/standard.css" rel="stylesheet" type="text/css" /> 
+<script src="http://www.google.com/jsapi"></script> 
+<script type="text/javascript" src="jquery.js"></script> 
+<script type="text/javascript" src="phiIp.js"></script> 
+<script type="text/javascript" src="markerclusterer_packed.js"></script> 
+<style>
+#map_canvas{
+	border: 1px solid #06C; height: 550px; width: 1200px;
+}
+</style>
+<script type="text/javascript"> 
+      var script = '<script type="text/javascript" src="markerclusterer';
+      if (document.location.search.indexOf('packed') != -1) {
+        script += '_packed';
+      }
+      if (document.location.search.indexOf('compiled') != -1) {
+        script += '_compiled';
+      }
+      script += '.js"><' + '/script>';
+      document.write(script);
+    </script> 
+<script type="text/javascript"> 
+
+	google.load('maps', '3', {
+	    other_params: 'sensor=false'
+	  });
+	  google.setOnLoadCallback(initialize);
+
+  	function initialize() {
+	
+	    var latlng = new google.maps.LatLng(51.4971789, -0.1460208); // B. Palace
+		var myOptions = {
+	      zoom: 1,
+	      center: latlng,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    }	
+	    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	    setClusterData();
+	  }
+
+ 
+</script> 
+
+</head>
+
+<body>  
+	<div id="map_canvas" ></div> 
+</body>
+</html>
